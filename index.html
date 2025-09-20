@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Kelly - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Inter", Arial, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .contact p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .contact a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .contact a:hover {
+            color: #2980b9;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+        }
+        
+        .about p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .education-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .education-item h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        
+        .education-item .school {
+            color: #3498db;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .education-item .date {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .education-item .details {
+            color: #555;
+            margin-top: 8px;
+        }
+        
+        .experience-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .experience-item h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        
+        .experience-item .company {
+            color: #e74c3c;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .experience-item .location {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+        
+        .experience-item .date {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .experience-item ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        
+        .experience-item li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .project-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #9b59b6;
+        }
+        
+        .project-item h3 {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .project-item p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .skill {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+        }
+        
+        .resume-download {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .resume-download a {
+            display: inline-block;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .resume-download a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .skills {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Mark Kelly</h1>
+            <p class="subtitle">Biotechnology Undergraduate, Master's in Technology/Science Entrepreneurship</p>
+        </div>
+        
+        <div class="content">
+            <div class="contact">
+                <p><strong> Email:</strong> mkelly46@nd.edu</p>
+                <p><strong> Location:</strong> South Bend, IN</p>
+                <p><strong> Phone:</strong> 574 300 4728</p>
+                <p><strong> LinkedIn:</strong> <a href="https://www.linkedin.com/in/mark-kelly-188373266" target="_blank">linkedin.com/in/mark-kelly-188373266</a></p>
+            </div>
+
+            <div class="section">
+                <h2>Professional Summary</h2>
+                <p>Biotechnology Undergraduate, Master's in Technology/Science Entrepreneurship. Experienced in technology commercialization and in search of a role that leverages these skills.</p>
+            </div>
+
+            <div class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Master of Science in Engineering, Science, and Technology Entrepreneurship (ESTEEM)</h3>
+                    <p class="school">University of Notre Dame</p>
+                    <p class="location">Notre Dame, IN</p>
+                    <p class="date">May 2026 (Expected)</p>
+                    <p class="details"> Awarded the Naughton Fellowship, a full academic scholarship.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Bachelor of Science in Biotechnology</h3>
+                    <p class="school">Dublin City University</p>
+                    <p class="location">Dublin, Ireland</p>
+                    <p class="date">Jun 2025 | GPA: 4.0 | #1 Class rank</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Highlighted Professional Experience</h2>
+                <div class="experience-item">
+                    <h3>Independent Consultant and Go-to-Market Specialist</h3>
+                    <p class="company">AssistIQ - ESTEEM Capstone Project</p>
+                    <p class="location">Columbus, OH</p>
+                    <p class="date">Jun 2025  May 2026</p>
+                    <ul>
+                        <li>Leading go-to-market strategy for computer vision & AI based supply tracking in operating rooms and other high cost procedural areas in hospital systems.</li>
+                        <li>Conducting 50+ stakeholder interviews to gather market insights and create sales pipeline leads.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Intern  Manufacturing Technology  Upstream Process and Technology Validation Team</h3>
+                    <p class="company">Bristol Myers Squibb (BMS)</p>
+                    <p class="location">Dublin, Ireland</p>
+                    <p class="date">Jan 2024  Sep 2024</p>
+                    <ul>
+                        <li>Performed Manufacturing Process Performance Qualification (PPQ) for 3 biological drug products.</li>
+                        <li>Authored and submitted 3 FDA/GMP-compliant regulatory documents.</li>
+                        <li>Led 4 process deviation investigations, ensuring timely identification and correction of root cause.</li>
+                        <li>Liaised between Manufacturing, Quality Assurance and Finance, delivering commercial solutions.</li>
+                        <li>Independently optimized buffer consumption using Lean Six Sigma, resulting in ,000 USD in savings.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Founder & Director (Self-Employed)</h3>
+                    <p class="company">ZeroFog.ie</p>
+                    <p class="location">Dublin, Ireland</p>
+                    <p class="date">Jan 2021  Jan 2023</p>
+                    <ul>
+                        <li>Founded a solution to prevent foggy glasses while wearing a face mask during COVID-19.</li>
+                        <li>Scaled to six figures in revenue over 18 months, managed a team of 6, reached top 1% performing Shopify store (2021).</li>
+                        <li>Responsible for social media marketing, reaching over 2800 Instagram followers and a return on ad spend of 5:1.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Windows Build Engineer</h3>
+                    <p class="company">An Post (Group Technology Solutions)</p>
+                    <p class="location">Dublin, Ireland</p>
+                    <p class="date">Apr 2021  Sep 2021</p>
+                    <ul>
+                        <li>Responsible for the rollout of 2,500 Windows 10 desktop upgrades across Ireland.</li>
+                        <li>Installed software onto 100 new PCs per day and repaired or recycled obsolete units.</li>
+                        <li>Designed an improved daily workflow, increasing efficiency by 40% completing 1 month ahead of schedule.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Projects</h2>
+                <div class="project-item">
+                    <h3>Compucard.ie</h3>
+                    <p> Created the first fully AI-driven personalized greeting card service.</p>
+                    <p> Independently learned web development and programming.</p>
+                    <p> Launched in December 2024 and received a product feature on Irish national radio.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Thesis: The Impact of Artificial Intelligence on Biological Drug Discovery</h3>
+                    <p> Meticulously researched and reviewed 38 scientific papers on neural networks in protein-based drug design.</p>
+                    <p> Critically analyzed underlying drug discovery technologies and evaluated areas for improvement using AI.</p>
+                    <p> Culminated findings in a review paper and presented findings to an audience of 70 peers.</p>
+                    <p> Awarded 1st place student presentation and a top-ranking final paper.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Skills and Interests</h2>
+                <div class="skills">
+                    <span class="skill">Biotechnology</span>
+                    <span class="skill">Drug Manufacturing</span>
+                    <span class="skill">Chromatography</span>
+                    <span class="skill">Spectroscopy</span>
+                    <span class="skill">Microscopy</span>
+                    <span class="skill">Regulatory Documentation</span>
+                    <span class="skill">HTML/CSS</span>
+                    <span class="skill">Web Development</span>
+                    <span class="skill">Microsoft Office</span>
+                    <span class="skill">Lean Six Sigma</span>
+                    <span class="skill">Public Speaking</span>
+                    <span class="skill">Project Management</span>
+                    <span class="skill">Customer Service</span>
+                    <span class="skill">Martial Arts</span>
+                </div>
+                <div style="margin-top: 20px;">
+                    <p><strong>Laboratory and Research Skills:</strong> Technical understanding of practical biology; End-to-end knowledge of biologic drug manufacturing; Practiced in chromatography, spectroscopy, and microscopy equipment and techniques; Ability to author regulatory documentation.</p>
+                    <p><strong>Computer Skills:</strong> Proficient in HTML coding and web design; Strong capabilities in Microsoft Excel, Word, and Office; Windows software installation and troubleshooting.</p>
+                    <p><strong>Other Skills:</strong> Confident presenter and public speaker; Effective time manager in short and long-term tasks/projects; Customer service and conflict resolution experience.</p>
+                    <p><strong>Interests:</strong> Lifelong martial artist competing in Kickboxing, Brazilian jiu-jitsu, and MMA. Brewing homemade beer.</p>
+                </div>
+            </div>
+
+            <div class="resume-download">
+                <a href="Mark Kelly Resume September 2025 (Notre Dame Job Fair).docx (3).pdf" target="_blank"> Download PDF Resume</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
